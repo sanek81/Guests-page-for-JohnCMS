@@ -1,0 +1,1 @@
+ALTER TABLE `my_guests` ADD UNIQUE `guests` (`user_id`, `guest_id`);
