@@ -69,7 +69,7 @@ else {
 
         if (NULL !== $read) {
             $implode = implode(',', $read);
-            $db->exec("UPDATE `my_guests` SET `read` = '1' WHERE `id` IN (" . $implode . ")");
+            $db->exec(sprintf("UPDATE `my_guests` SET `read` = '1' WHERE `id` IN (%s)"), $implode);
         }
         //Постраничная навигация
         if ($total > $kmess) {
