@@ -71,6 +71,7 @@ else {
             $implode = implode(',', $read);
             $db->exec(sprintf("UPDATE `my_guests` SET `read` = '1' WHERE `id` IN (%s)", $implode));
         }
+
         //Постраничная навигация
         if ($total > $kmess) {
             $out .= '<div class="topmenu">' . $tools->displayPagination('./index.php?', $start, $total, $kmess) . '</div>';
